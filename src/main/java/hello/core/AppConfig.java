@@ -15,6 +15,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // Application의 설정 정보(구성 정보)의 annotation
 public class AppConfig {
 
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+
     @Bean // Spring Container에 등록이 됨.
     public MemberService memberService(){
         // 생성자 주입
@@ -26,7 +29,8 @@ public class AppConfig {
     }
     @Bean
     public OrderService orderService(){
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return null;
     }
     @Bean
     public DiscountPolicy discountPolicy(){
